@@ -20,7 +20,7 @@ def main():
 		test = bible.bibleParse()
 		test.parse(command)
 		if test.verset1 != 0:
-			part(test.book, test.verset1, test.verset2)
+			part.parter(test.book, test.verset1, test.verset2)
 		
 		elif cmd[0] == "help":
 			print("")

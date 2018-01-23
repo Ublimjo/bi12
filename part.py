@@ -1,7 +1,7 @@
 import bible
 from bs4 import BeautifulSoup
 
-bookList = [["genesisy",              "006_B12_.GE"], 
+bookList = [["genesisy",              "006_B12_.GE"],
             ["eksodosy",              "007_B12_.EX"],
             ["levitikosy",            "008_B12_.LE"],
             ["nomery",                "009_B12_.NU"],
@@ -74,16 +74,18 @@ bookList = [["genesisy",              "006_B12_.GE"],
 #print("Verset :", test.verset1)
 #print("Subverset :", test.verset2)
 
-def part(book, ver1, ver2):
+def parter(book, ver1, ver2):
 	nbr = 0
-		while nbr < 66:
-			if book == bookList[nbr][0]:
-				filename = bookList[nbr][1]
-				break
-			nbr += 1
-			
-		if ver1 == 1:
-			filexht = open("/storage/emulated/0/FloatingBible/bi12_MG/OEBPS/" + filename + ".xhtml", "r")
-		else:
-			filexht = open("/storage/emulated/0/FloatingBible/bi12_MG/OEBPS/" + filename + "-split" + ver1 + ".xhtml", "r")
-		soup = BeautifulSoup(filexht, "html.parser")
+	while nbr < 66:
+		if book == bookList[nbr][0]:
+			filename = bookList[nbr][1]
+			break
+		nbr += 1
+		
+	if ver1 == 1:
+		filexht = open("/storage/emulated/0/FloatingBible/bi12_MG/OEBPS/" + filename + ".xhtml", "r")
+	else:
+		filexht = open("/storage/emulated/0/FloatingBible/bi12_MG/OEBPS/" + filename + "-split" + ver1 + ".xhtml", "r")
+	soup = BeautifulSoup(filexht, "html.parser")
+	print(soup.body)
+		
