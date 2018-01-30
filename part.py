@@ -21,55 +21,55 @@ bookList = [["genesisy",              "006_B12_.GE"],
             ["joba",                  "023_B12_.JOB"],
             ["salamo",                "024_B12_.PS"],
             ["ohabolana",             "025_B12_.PR"],
-            ["mpitoriteny",           "026_B12_."],
-            ["tononkiran’i solomona", "027_B12_."],
-            ["isaia",                 "028_B12_."],
-            ["jeremia",               "029_B12_."],
-            ["fitomaniana",           "030_B12_."],
-            ["ezekiela",              "031_B12_."],
-            ["daniela",               "032_B12_."],
-            ["hosea",                 "033_B12_."],
-            ["joela",                 "034_B12_."],
-            ["amosa",                 "035_B12_."],
-            ["obadia",                "036_B12_."],
-            ["jona",                  "037_B12_."],
-            ["mika",                  "038_B12_."],
-            ["nahoma",                "039_B12_."],
-            ["habakoka",              "040_B12_."],
-            ["zefania",               "041_B12_."],
-            ["hagay",                 "042_B12_."],
-            ["zakaria",               "043_B12_."],
-            ["malakia",               "044_B12_."],
-            ["matio",                 "045_B12_."],
-            ["marka",                 "046_B12_."],
-            ["lioka",                 "047_B12_."],
-            ["jaona",                 "048_B12_."],
-            ["asan’ny apostoly",      "049_B12_."],
-            ["romanina",              "050_B12_."],
-            ["1 korintianina",        "051_B12_."],
-            ["2 korintianina",        "052_B12_."],
-            ["galatianina",           "053_B12_."],
-            ["efesianina",            "054_B12_."],
-            ["filipianina",           "055_B12_."],
-            ["kolosianina",           "056_B12_."],
-            ["1 tesalonianina",       "057_B12_."],
-            ["2 tesalonianina",       "058_B12_."],
-            ["1 timoty",              "059_B12_."],
-            ["2 timoty",              "060_B12_."],
-            ["titosy",                "061_B12_."],
-            ["filemona",              "062_B12_."],
-            ["hebreo",                "063_B12_."],
-            ["jakoba",                "064_B12_."],
-            ["1 petera",              "065_B12_."],
-            ["2 petera",              "066_B12_."],
-            ["1 jaona",               "067_B12_."],
-            ["2 jaona",               "068_B12_."],
-            ["3 jaona",               "069_B12_."],
-            ["joda",                  "070_B12_."],
-            ["apokalypsy",            "071_B12_."]]
+            ["mpitoriteny",           "026_B12_.EC"],
+            ["tononkiran’i solomona", "027_B12_.CA"],
+            ["isaia",                 "028_B12_.ISA"],
+            ["jeremia",               "029_B12_.JER"],
+            ["fitomaniana",           "030_B12_.LA"],
+            ["ezekiela",              "031_B12_.EZE"],
+            ["daniela",               "032_B12_.DA"],
+            ["hosea",                 "033_B12_.HOS"],
+            ["joela",                 "034_B12_.JOE"],
+            ["amosa",                 "035_B12_.AM"],
+            ["obadia",                "036_B12_.OB"],
+            ["jona",                  "037_B12_.JON"],
+            ["mika",                  "038_B12_.MIC"],
+            ["nahoma",                "039_B12_.NAH"],
+            ["habakoka",              "040_B12_.HAB"],
+            ["zefania",               "041_B12_.ZEP"],
+            ["hagay",                 "042_B12_.HAG"],
+            ["zakaria",               "043_B12_.ZEC"],
+            ["malakia",               "044_B12_.MAL"],
+            ["matio",                 "045_B12_.MT"],
+            ["marka",                 "046_B12_.MR"],
+            ["lioka",                 "047_B12_.LU"],
+            ["jaona",                 "048_B12_.JOH"],
+            ["asan’ny apostoly",      "049_B12_.AC"],
+            ["romanina",              "050_B12_.RO"],
+            ["1 korintianina",        "051_B12_.1CO"],
+            ["2 korintianina",        "052_B12_.2CO"],
+            ["galatianina",           "053_B12_.GA"],
+            ["efesianina",            "054_B12_.EPH"],
+            ["filipianina",           "055_B12_.PHP"],
+            ["kolosianina",           "056_B12_.COL"],
+            ["1 tesalonianina",       "057_B12_.1TH"],
+            ["2 tesalonianina",       "058_B12_.2TH"],
+            ["1 timoty",              "059_B12_.1TI"],
+            ["2 timoty",              "060_B12_.2TI"],
+            ["titosy",                "061_B12_.TIT"],
+            ["filemona",              "062_B12_.PHM"],
+            ["hebreo",                "063_B12_.HEB"],
+            ["jakoba",                "064_B12_.JAS"],
+            ["1 petera",              "065_B12_.1PE"],
+            ["2 petera",              "066_B12_.2PE"],
+            ["1 jaona",               "067_B12_.1JO"],
+            ["2 jaona",               "068_B12_.2JO"],
+            ["3 jaona",               "069_B12_.3JO"],
+            ["joda",                  "070_B12_.JUD"],
+            ["apokalypsy",            "071_B12_.RE"]]
 
 #test = bible.bibleParse()
-#test.parse("1 Jagona 5:19")
+#test.parse("1 Jaona 5:19")
 #print("Book :", test.book)
 #print("Verset :", test.verset1)
 #print("Subverset :", test.verset2)
@@ -82,10 +82,24 @@ def parter(book, ver1, ver2):
 			break
 		nbr += 1
 		
-	if ver1 == 1:
-		filexht = open("/storage/emulated/0/FloatingBible/bi12_MG/OEBPS/" + filename + ".xhtml", "r")
-	else:
-		filexht = open("/storage/emulated/0/FloatingBible/bi12_MG/OEBPS/" + filename + "-split" + ver1 + ".xhtml", "r")
+	try:
+		if int(ver1) == 1:
+			filexht = open("/storage/emulated/0/FloatingBible/bi12_MG/OEBPS/" + filename + ".xhtml", "r")
+		else:
+			filexht = open("/storage/emulated/0/FloatingBible/bi12_MG/OEBPS/" + filename + "-split" + ver1 + ".xhtml", "r")
+	except:
+		print("File not found")
+		if ver1 == 1:
+			filexht = ("/storage/emulated/0/FloatingBible/bi12_MG/OEBPS/" + filename + ".xhtml")
+		else:
+			filexht = ("/storage/emulated/0/FloatingBible/bi12_MG/OEBPS/" + filename + "-split" + ver1 + ".xhtml")
+		print(filexht)
+
+
 	soup = BeautifulSoup(filexht, "html.parser")
-	print(soup.body)
-		
+	vrs = u"chapter"+ver1+"_verse"+ver2
+	stringPart = soup.find("span", attrs={"id":vrs}).next.next.next.next
+	print("")
+	print("\t", stringPart)
+	print("")
+	print("")
