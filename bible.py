@@ -45,7 +45,6 @@ class bibleParse:
 					subverset.insert(i, a)
 					a += 1
 					i += 1
-		print(subverset)
 		
 	#activate
 		self.book = entbook

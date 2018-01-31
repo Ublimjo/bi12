@@ -99,6 +99,8 @@ def parter(book, ver1, ver2):
 
 
 	soup = BeautifulSoup(filexht, "html.parser")
+	print("\t", "[" + ver1 + "]", ver2)
+
 	for sver2 in ver2:
 		sver2 = str(sver2)
 		vrs = u"chapter"+ver1+"_verse"+sver2
@@ -109,4 +111,4 @@ def parter(book, ver1, ver2):
 			print("\t", "Invalid verset", sver2)
 			break
 
-		print("\t", "["+sver2+"]", stringPart)
+		print("\t", " | ["+sver2+"]", stringPart)
