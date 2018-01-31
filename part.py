@@ -75,6 +75,7 @@ bookList = [["genesisy",              "006_B12_.GE"],
 #print("Subverset :", test.verset2)
 
 def parter(book, ver1, ver2):
+
 	nbr = 0
 	while nbr < 66:
 		if book == bookList[nbr][0]:
@@ -93,12 +94,19 @@ def parter(book, ver1, ver2):
 			filexht = ("/storage/emulated/0/FloatingBible/bi12_MG/OEBPS/" + filename + ".xhtml")
 		else:
 			filexht = ("/storage/emulated/0/FloatingBible/bi12_MG/OEBPS/" + filename + "-split" + ver1 + ".xhtml")
-		print(filexht)
+		print("\t", "Invalid chapter", ver1)
+		return False
 
 
 	soup = BeautifulSoup(filexht, "html.parser")
 	for sver2 in ver2:
 		sver2 = str(sver2)
 		vrs = u"chapter"+ver1+"_verse"+sver2
-		stringPart = soup.find("span", attrs={"id":vrs}).next.next.next.next
+
+		try:
+			stringPart = soup.find("span", attrs={"id":vrs}).next.next.next.next
+		except:
+			print("\t", "Invalid verset", sver2)
+			break
+
 		print("\t", "["+sver2+"]", stringPart)
