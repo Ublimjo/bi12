@@ -35,6 +35,18 @@ class bibleParse:
 		else:
 			verset = cmd[2].split(":")[0]
 			subverset = cmd[2].split(":")[1].split(",")
+		
+		for i, lsvt in enumerate(subverset):
+			if "-" in str(lsvt):
+				del subverset[i]
+				a = int(lsvt.split("-")[0])
+				z = int(lsvt.split("-")[1])
+				while a <= z:
+					subverset.insert(i, a)
+					a += 1
+					i += 1
+		print(subverset)
+		
 	#activate
 		self.book = entbook
 		self.raw_verset = verset+":"+str(subverset)

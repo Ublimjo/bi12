@@ -98,6 +98,7 @@ def parter(book, ver1, ver2):
 
 	soup = BeautifulSoup(filexht, "html.parser")
 	for sver2 in ver2:
+		sver2 = str(sver2)
 		vrs = u"chapter"+ver1+"_verse"+sver2
 		stringPart = soup.find("span", attrs={"id":vrs}).next.next.next.next
-		print("\t", stringPart)
+		print("\t", "["+sver2+"]", stringPart)
