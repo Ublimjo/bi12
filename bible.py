@@ -13,11 +13,13 @@ class bibleParse:
 		self.raw_verset = ""
 		self.verset1 = 0
 		self.raw_verset2 = ""
-		self.verset2 = 0
+		self.verset2 = []
 
 	def parse(self, enter):
 	#test book
 		cmd = enter.lower().split(" ")
+		if len(cmd) == 1:
+			return False
 		if (cmd[0] + " " + cmd[1]) in bookList:
 			entbook = cmd[0] + " " + cmd[1]
 			withSub = True
@@ -29,13 +31,25 @@ class bibleParse:
 	#test verset
 		if not withSub:
 			verset = cmd[1].split(":")[0]
-			subverset = cmd[1].split(":")[1]#.split(",")
+			subverset = cmd[1].split(":")[1].split(",")
 		else:
 			verset = cmd[2].split(":")[0]
-			subverset = cmd[2].split(":")[1]#.split(",")
+			subverset = cmd[2].split(":")[1].split(",")
+		
+		for i, lsvt in enumerate(subverset):
+			if "-" in str(lsvt):
+				del subverset[i]
+				a = int(lsvt.split("-")[0])
+				z = int(lsvt.split("-")[1])
+				while a <= z:
+					subverset.insert(i, a)
+					a += 1
+					i += 1
+		print(subverset)
+		
 	#activate
 		self.book = entbook
-		self.raw_verset = verset+":"+subverset
+		self.raw_verset = verset+":"+str(subverset)
 		self.verset1 = verset
 		self.raw_verset2 = subverset
 		self.verset2 = subverset
