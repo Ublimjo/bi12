@@ -9,7 +9,7 @@ version = 0.2
 def main():
 	print("===========================================")
 	print("  Baiboly fandikan-teny ny tontolo vaovao")
-	print("    Version :", version)
+	print("    Version :", str(version))
 	print("===========================================")
 	
 	while True:
@@ -21,7 +21,7 @@ def main():
 		test.parse(command)
 		if test.verset1 != 0:
 			part.parter(test.book, test.verset1, test.verset2)
-		
+
 		elif cmd[0] == "help":
 			print("")
 			print("    Ampidiro ny andinin-teny ilainao ")
@@ -51,13 +51,15 @@ def main():
 		elif cmd[0] == "version":
 			print("")
 			
+def view(command):
+    command = command.lower()
+    test = bible.bibleParse()
+    test.parse(command)
+    if test.verset1 != 0:
+        part.parter(test.book, test.verset1, test.verset2)
 		
 			
-		
-		
-		
-
 if len(sys.argv) == 1:
 	main()
 else:
-	view()
+	view(sys.argv[1] + " " + sys.argv[2])
