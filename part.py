@@ -74,6 +74,16 @@ bookList = [["genesisy",              "006_B12_.GE"],
 #print("Verset :", test.verset1)
 #print("Subverset :", test.verset2)
 
+class bcolor:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
 def parter(book, ver1, ver2):
 
 	nbr = 0
@@ -99,7 +109,7 @@ def parter(book, ver1, ver2):
 
 
 	soup = BeautifulSoup(filexht, "html.parser")
-	print("\t", "[" + ver1 + "]", ver2)
+	print("\t", bcolor.OKGREEN + "[" + ver1 + "]" + bcolor.ENDC, ver2)
 
 	for sver2 in ver2:
 		sver2 = str(sver2)
@@ -111,4 +121,4 @@ def parter(book, ver1, ver2):
 			print("\t", "Invalid verset", sver2)
 			break
 
-		print("\t", " | ["+sver2+"]", stringPart)
+		print("\t", bcolor.OKGREEN + " | " + bcolor.OKBLUE + "["+sver2+"]" + bcolor.ENDC, stringPart)
