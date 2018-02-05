@@ -99,12 +99,8 @@ def parter(book, ver1, ver2):
 		else:
 			filexht = open("/storage/emulated/0/FloatingBible/bi12_MG/OEBPS/" + filename + "-split" + ver1 + ".xhtml", "r")
 	except:
-		print("File not found")
-		if ver1 == 1:
-			filexht = ("/storage/emulated/0/FloatingBible/bi12_MG/OEBPS/" + filename + ".xhtml")
-		else:
-			filexht = ("/storage/emulated/0/FloatingBible/bi12_MG/OEBPS/" + filename + "-split" + ver1 + ".xhtml")
-		print("\t", "Invalid chapter", ver1)
+		print("\t", bcolor.FAIL + "File not found" + bcolor.ENDC)
+		print("\t", bcolor.FAIL + "Invalid chapter: " + bcolor.ENDC + ver1)
 		return False
 
 
@@ -118,7 +114,7 @@ def parter(book, ver1, ver2):
 		try:
 			stringPart = soup.find("span", attrs={"id":vrs}).next.next.next.next
 		except:
-			print("\t", "Invalid verset", sver2)
+			print("\t", bcolor.FAIL + "Invalid verset" + bcolor.ENDC, sver2)
 			break
 
 		print("\t", bcolor.OKGREEN + " | " + bcolor.OKBLUE + "["+sver2+"]" + bcolor.ENDC, stringPart)
