@@ -48,6 +48,7 @@ class bibleParse:
 			verset = cmd[2].split(":")[0]
 			subverset = cmd[2].split(":")[1].split(",")
 		
+		# convert "Matio 24:14-17" to "Matio 24:14,15,16,17"
 		for i, lsvt in enumerate(subverset):
 			if "-" in str(lsvt):
 				del subverset[i]
