@@ -8,6 +8,16 @@ def parseInt(enter):
 	except:
 		return 0
 
+def getDist(enter):
+	solver = ed.EditDistance()
+	i = 1
+	leaf = 1
+	while True:
+		for book in bookList:
+			if solver.solve(enter, book) <= leaf:
+				return [leaf, book]
+		leaf += 1
+
 class bibleParse:
 	def __init__(self):
 		self.book = ""
@@ -24,22 +34,21 @@ class bibleParse:
 
 		prebook1 = (cmd[0] + " " + cmd[1])
 		prebook2 = (cmd[0])
-		solver = ed.EditDistance()
+
 
 		if (prebook1) in bookList:
-			entbook = cmd[0] + " " + cmd[1]
+			entbook = prebook1
 			withSub = True
 		elif (prebook2) in bookList:
-			entbook = cmd[0]
+			entbook = prebook2
 			withSub = False
 		else:
-			for ix in bookList:
-				if solver.solve(prebook1, ix) <= 2:
-					entbook = ix
-					withSub = True
-				elif solver.solve(prebook2, ix) <= 2:
-					entbook = ix
-					withSub = False
+			if getDist(prebook2)[0] < getDist(prebook1)[0]:
+				entbook = getDist(prebook2)[1]
+				withSub = False
+			elif getDist(prebook1)[0] < getDist(prebook2)[0]:
+				entbook = getDist(prebook1)[1]
+				withSub = True
 	# -- test verset
 		if not withSub:
 			verset = cmd[1].split(":")[0]
