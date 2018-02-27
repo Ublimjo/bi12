@@ -10,13 +10,15 @@ def parseInt(enter):
 
 def getDist(enter):
 	solver = ed.EditDistance()
-	i = 1
 	leaf = 1
+	mean = []
+	for book in bookList:
+		mean.append(solver.solve(enter, book))
 	while True:
-		for book in bookList:
-			if solver.solve(enter, book) <= leaf:
-				return [leaf, book]
-		leaf += 1
+		try:
+			return [leaf, bookList[mean.index(leaf)]]
+		except ValueError:
+			leaf += 1
 
 class bibleParse:
 	def __init__(self):
