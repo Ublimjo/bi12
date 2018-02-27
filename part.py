@@ -100,13 +100,13 @@ def parter(book, ver1, ver2):
 		else:
 			filexht = open("/storage/emulated/0/FloatingBible/bi12_MG/OEBPS/" + filename + "-split" + ver1 + ".xhtml", "r")
 	except:
-		print("\t", bcolor.FAIL + "File not found" + bcolor.ENDC)
-		print("\t", bcolor.FAIL + "Invalid chapter: " + bcolor.ENDC + ver1)
+		print(bcolor.FAIL + "File not found" + bcolor.ENDC)
+		print(bcolor.FAIL + "Invalid chapter: " + bcolor.ENDC + ver1)
 		return False
 
 	#parse file
 	soup = BeautifulSoup(filexht, "html.parser")
-	print("\t", bcolor.OKGREEN + "[" + ver1 + "]" + bcolor.ENDC, ver2)
+	print(bcolor.OKGREEN + "[" + ver1 + "]" + bcolor.ENDC, ver2)
 
 	#for multiples verset
 	for sver2 in ver2:
@@ -116,7 +116,7 @@ def parter(book, ver1, ver2):
 		try:
 			stringPart = soup.find("span", attrs={"id":vrs}).next.next.next.next
 		except:
-			print("\t", bcolor.FAIL + "Invalid verset: " + bcolor.ENDC, sver2)
+			print(bcolor.FAIL + "Invalid verset: " + bcolor.ENDC, sver2)
 			break
 
-		print("\t", bcolor.OKGREEN + " | " + bcolor.OKBLUE + "["+sver2+"]" + bcolor.ENDC, stringPart)
+		print(bcolor.OKGREEN + " | " + bcolor.OKBLUE + "["+sver2+"]" + bcolor.ENDC, stringPart)

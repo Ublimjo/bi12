@@ -13,7 +13,7 @@ def main():
 	print("===========================================")
 	
 	while True:
-		command = input("  bi12 > ").lower()
+		command = input(" bi12 > ").lower()
 		cmd = command.split(" ")
 		
 		#test book
