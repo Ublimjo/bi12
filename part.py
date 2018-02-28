@@ -85,7 +85,13 @@ class bcolor:
     UNDERLINE = '\033[4m'
 
 def parter(book, ver1, ver2):
-
+	"""
+		Function to print bible verset From file
+		Matio 24:14
+		:param book: 'Matio'
+		:param ver1: '24'
+		:param ver2: '14'
+	"""
 	nbr = 0
 	while nbr < 66:
 		if book == bookList[nbr][0]:

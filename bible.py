@@ -9,6 +9,11 @@ def parseInt(enter):
 		return 0
 
 def getDist(enter):
+	"""
+		Function to test shortest distance of string
+		Mitio -> Matio
+		:param enter: string to test
+	"""
 	solver = ed.EditDistance()
 	leaf = 1
 	mean = []
@@ -29,7 +34,11 @@ class bibleParse:
 		self.verset2 = []
 
 	def parse(self, enter):
-	# -- test book
+		"""
+			parse verset input (Book with verset)
+			:param enter: verset to parse
+				Matio 24:14,16-20 -> Matio 24:14,16,17,18,19,20
+		"""
 		cmd = enter.lower().split(" ")
 		if len(cmd) == 1:
 			return False
