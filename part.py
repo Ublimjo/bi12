@@ -92,7 +92,7 @@ def parter(book, ver1, ver2):
 			filename = bookList[nbr][1]
 			break
 		nbr += 1
-		
+
 	#open file
 	try:
 		if int(ver1) == 1:
@@ -106,7 +106,8 @@ def parter(book, ver1, ver2):
 
 	#parse file
 	soup = BeautifulSoup(filexht, "html.parser")
-	print(book, bcolor.OKGREEN + "[" + ver1 + "]" + bcolor.ENDC, ver2)
+	print(book.capitalize())
+	print(bcolor.OKGREEN + "[" + ver1 + "]" + bcolor.ENDC, ver2)
 
 	#for multiples verset
 	for sver2 in ver2:
