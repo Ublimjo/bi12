@@ -15,7 +15,7 @@ def getDist(enter):
 		:param enter: string to test
 	"""
 	solver = ed.EditDistance()
-	leaf = 1
+	leaf = 0
 	mean = []
 	for book in bookList:
 		mean.append(solver.solve(enter, book))
@@ -46,18 +46,10 @@ class bibleParse:
 		prebook1 = (cmd[0] + " " + cmd[1])
 		prebook2 = (cmd[0])
 
-
-		if (prebook1) in bookList:
-			entbook = prebook1
-			withSub = True
-		elif (prebook2) in bookList:
-			entbook = prebook2
-			withSub = False
-		else:
-			if getDist(prebook2)[0] < getDist(prebook1)[0]:
+		if getDist(prebook2)[0] < getDist(prebook1)[0]:
 				entbook = getDist(prebook2)[1]
 				withSub = False
-			elif getDist(prebook1)[0] < getDist(prebook2)[0]:
+		elif getDist(prebook1)[0] < getDist(prebook2)[0]:
 				entbook = getDist(prebook1)[1]
 				withSub = True
 	# -- test verset
