@@ -100,11 +100,12 @@ def parter(book, ver1, ver2):
 		nbr += 1
 
 	#open file
+	filepath = "/data/data/com.termux/files/home/storage/shared/FloatingBible/bi12_MG/OEBPS/"
 	try:
 		if int(ver1) == 1:
-			filexht = open("/storage/emulated/0/FloatingBible/bi12_MG/OEBPS/" + filename + ".xhtml", "r")
+			filexht = open(filepath + filename + ".xhtml", "r")
 		else:
-			filexht = open("/storage/emulated/0/FloatingBible/bi12_MG/OEBPS/" + filename + "-split" + ver1 + ".xhtml", "r")
+			filexht = open(filepath + filename + "-split" + ver1 + ".xhtml", "r")
 	except:
 		print(bcolor.FAIL + "File not found" + bcolor.ENDC)
 		print(bcolor.FAIL + "Invalid chapter: " + bcolor.ENDC + ver1)
