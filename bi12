@@ -2,44 +2,43 @@
 import argparse
 import sys
 import bible
-import part 
+import part
 
 version = "0.4"
 
+
 def main():
-	print("===========================================")
-	print("  Baiboly fandikan-teny ny tontolo vaovao")
-	print("    Version :", version)
-	print("===========================================")
-	
-	while True:
-		command = input(" bi12 > ").lower()
-		cmd = command.split(" ")
-		
-		#bi book
-		bi = bible.bibleParse()
-		bi.parse(command)
-		if bi.verset1 != 0:
-			part.parter(bi.book, bi.verset1, bi.verset2)
-		
-		elif cmd[0] == (("exit") or ("quit")):
-			break
-			
-		elif cmd[0] == "version":
-			print("Version:", version)
-			
+    print("===========================================")
+    print("  Baiboly fandikan-teny ny tontolo vaovao")
+    print("    Version :", version)
+    print("===========================================")
+    while True:
+        command = input(" bi12 > ").lower()
+        cmd = command.split(" ")
+        # bi book
+        bi = bible.bibleParse()
+        bi.parse(command)
+        if bi.verset1 != 0:
+            part.parter(bi.book, bi.verset1, bi.verset2)
+        elif cmd[0] == (("exit") or ("quit")):
+            break
+
+        elif cmd[0] == "version":
+            print("Version:", version)
+
+
 def view(command):
     command = command.lower()
     bi = bible.bibleParse()
     bi.parse(command)
     if bi.verset1 != 0:
         part.parter(bi.book, bi.verset1, bi.verset2)
-		
-			
+
+
 if len(sys.argv) == 1:
-	main()
+    main()
 else:
-	if len(sys.argv) == 2:
-		view(sys.argv[1] + " " + sys.argv[2])
-	elif len(sys.argv) == 3:
-		view(sys.argv[1] + " " + sys.argv[2] + " " + sys.argv[3])
+    if len(sys.argv) == 2:
+        view(sys.argv[1] + " " + sys.argv[2])
+    elif len(sys.argv) == 3:
+        view(sys.argv[1] + " " + sys.argv[2] + " " + sys.argv[3])
