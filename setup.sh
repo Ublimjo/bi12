@@ -5,3 +5,4 @@ chmod +x $PREFIX/bin/bi12
 cp bible.py $PREFIX/bin
 cp part.py $PREFIX/bin
 cp edit_distance.py $PREFIX/bin
+pip install -r requirement.txt
