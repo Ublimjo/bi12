@@ -1,3 +1,11 @@
 # bi12
-Bible new world translation in python
-This project don't work now
+
+Bible new world translation (NWT) in command line written in python
+
+## Supported language
+
+- Malagasy
+
+## Installation
+
+ Just clone this repository and execute setup.sh
