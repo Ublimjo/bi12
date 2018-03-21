@@ -1,4 +1,5 @@
 import bible
+import hues
 from bs4 import BeautifulSoup
 
 bookList = [
@@ -110,8 +111,8 @@ def parter(book, ver1, ver2):
         else:
             filexht = open(filepath + filename + "-split" + ver1 + ".xhtml", "r")
     except:
-        print(bcolor.FAIL + "File not found" + bcolor.ENDC)
-        print(bcolor.FAIL + "Invalid chapter: " + bcolor.ENDC + ver1)
+        hues.error("File not found")
+        hues.error("Invalid chapter: " + ver1)
         return False
 
     # parse file
@@ -125,7 +126,7 @@ def parter(book, ver1, ver2):
         try:
             stringPart = soup.find("span", attrs={"id": vrs}).next.next.next.next
         except:
-            print(bcolor.FAIL + "Invalid verset: " + bcolor.ENDC, sver2)
+            hues.error("Invalid verset: " + sver2)
             break
 
         print(
