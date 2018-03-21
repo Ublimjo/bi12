@@ -102,7 +102,7 @@ class bibleParse:
     def __init__(self):
         self.book = ""
         self.raw_verset = ""
-        self.verset1 = 0
+        self.chapter = 0
         self.raw_verset2 = ""
         self.verset2 = []
 
@@ -110,8 +110,15 @@ class bibleParse:
         """
 			parse verset input (Book with verset)
 			:param enter: verset to parse
-				Matio 24:14,16-20 -> Matio 24:14,16,17,18,19,20
-		"""
+				>>> import bible
+				>>> bi = bible.bibleParse().parse("Mitio 24:14,16-20")
+				>>> bi.book
+				Matio
+				>>> bi.chapter 
+				24
+				>>> bi.verset2
+				[14,16,17,18,19,20]
+			"""
         cmd = enter.lower().split(" ")
         if len(cmd) == 1:
             return False
@@ -144,6 +151,6 @@ class bibleParse:
         # activate
         self.book = entbook
         self.raw_verset = verset + ":" + str(subverset)
-        self.verset1 = verset
+        self.chapter = verset
         self.raw_verset2 = subverset
         self.verset2 = subverset

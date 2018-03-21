@@ -18,8 +18,8 @@ def main():
         # bi book
         bi = bible.bibleParse()
         bi.parse(command)
-        if bi.verset1 != 0:
-            part.parter(bi.book, bi.verset1, bi.verset2)
+        if bi.chapter != 0:
+            part.parter(bi.book, bi.chapter, bi.verset2)
         elif cmd[0] == (("exit") or ("quit")):
             break
 
@@ -31,8 +31,8 @@ def view(command):
     command = command.lower()
     bi = bible.bibleParse()
     bi.parse(command)
-    if bi.verset1 != 0:
-        part.parter(bi.book, bi.verset1, bi.verset2)
+    if bi.chapter != 0:
+        part.parter(bi.book, bi.chapter, bi.verset2)
 
 
 if len(sys.argv) == 1:
