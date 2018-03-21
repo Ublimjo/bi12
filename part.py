@@ -1,5 +1,7 @@
 import bible
 import hues
+import textwrap
+import os
 from bs4 import BeautifulSoup
 
 bookList = [
@@ -88,6 +90,24 @@ class bcolor:
     UNDERLINE = '\033[4m'
 
 
+def getFileName(book):
+	nbr = 0
+	while nbr < 66:
+		if book == bookList[nbr][0]:
+			return bookList[nbr][1]
+			break
+
+		nbr += 1
+
+
+def wrap(string):
+	text = textwrap.wrap(string, 40)
+	final = ""
+	for line in text:
+		final = final + line + "\n" + bcolor.OKGREEN + " | " + bcolor.ENDC
+	return final
+
+
 def parter(book, ver1, ver2):
     """
 		Function to print bible verset From file
@@ -96,13 +116,7 @@ def parter(book, ver1, ver2):
 		:param ver1: '24'
 		:param ver2: '14'
 	"""
-    nbr = 0
-    while nbr < 66:
-        if book == bookList[nbr][0]:
-            filename = bookList[nbr][1]
-            break
-
-        nbr += 1
+    filename = getFileName(book)
     # open file
     filepath = "/data/data/com.termux/files/home/storage/shared/FloatingBible/bi12_MG/OEBPS/"
     try:
@@ -131,5 +145,5 @@ def parter(book, ver1, ver2):
 
         print(
             bcolor.OKGREEN + " | " + bcolor.OKBLUE + "[" + sver2 + "]" + bcolor.ENDC,
-            stringPart,
+            wrap(stringPart),
         )
