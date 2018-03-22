@@ -91,21 +91,22 @@ class bcolor:
 
 
 def getFileName(book):
-	nbr = 0
-	while nbr < 66:
-		if book == bookList[nbr][0]:
-			return bookList[nbr][1]
-			break
+    nbr = 0
+    while nbr < 66:
+        if book == bookList[nbr][0]:
+            return bookList[nbr][1]
 
-		nbr += 1
+            break
+
+        nbr += 1
 
 
 def wrap(string):
-	text = textwrap.wrap(string, 40)
-	final = ""
-	for line in text:
-		final = final + line + "\n" + bcolor.OKGREEN + " | " + bcolor.ENDC
-	return final
+    text = textwrap.wrap(string, 40)
+    final = ""
+    for line in text:
+        final = final + line + "\n" + bcolor.OKGREEN + " | " + bcolor.ENDC
+    return final
 
 
 def parter(book, ver1, ver2):
