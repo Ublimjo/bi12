@@ -18,8 +18,10 @@ def main():
         # bi book
         bi = bible.bibleParse()
         bi.parse(command)
-        if bi.chapter != 0:
-            part.parter(bi.book, bi.chapter, bi.verset2)
+        if bi.chapter != []:
+            print(bi.book.capitalize())
+            for i, chap in enumerate(bi.chapter):
+                part.parter(bi.book, chap, bi.verset2[i])
         elif cmd[0] == (("exit") or ("quit")):
             break
 

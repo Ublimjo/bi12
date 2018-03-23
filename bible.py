@@ -102,7 +102,7 @@ class bibleParse:
     def __init__(self):
         self.book = ""
         self.raw_verset = ""
-        self.chapter = 0
+        self.chapter = []
         self.raw_verset2 = ""
         self.verset2 = []
 
@@ -132,12 +132,18 @@ class bibleParse:
             entbook = getDist(prebook1)[1]
             withSub = True
         # -- test verset
+        verset = []
+        subverset = []
         if not withSub:
-            verset = cmd[1].split(":")[0]
-            subverset = cmd[1].split(":")[1].split(",")
+            raw = cmd[1].split(";")
+            for raws in raw:
+                verset.append(raws.split(":")[0])
+                subverset.append(raws.split(":")[1].split(","))
         else:
-            verset = cmd[2].split(":")[0]
-            subverset = cmd[2].split(":")[1].split(",")
+            raw = cmd[2].split(";")
+            for raws in raw:
+                verset.append(raws.split(":")[0])
+                subverset.append(raws.split(":")[1].split(","))
         # convert "Matio 24:14-17" to "Matio 24:14,15,16,17"
         for i, lsvt in enumerate(subverset):
             if "-" in str(lsvt):
@@ -150,7 +156,7 @@ class bibleParse:
                     i += 1
         # activate
         self.book = entbook
-        self.raw_verset = verset + ":" + str(subverset)
+        self.raw_verset = verset + subverset
         self.chapter = verset
         self.raw_verset2 = subverset
         self.verset2 = subverset
