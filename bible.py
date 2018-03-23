@@ -145,15 +145,18 @@ class bibleParse:
                 verset.append(raws.split(":")[0])
                 subverset.append(raws.split(":")[1].split(","))
         # convert "Matio 24:14-17" to "Matio 24:14,15,16,17"
-        for i, lsvt in enumerate(subverset):
-            if "-" in str(lsvt):
-                del subverset[i]
-                a = int(lsvt.split("-")[0])
-                z = int(lsvt.split("-")[1])
-                while a <= z:
-                    subverset.insert(i, a)
-                    a += 1
-                    i += 1
+        n = 0
+        while n < len(subverset):
+            for i, lsvt in enumerate(subverset[n]):
+                if "-" in str(lsvt):
+                    del subverset[n][i]
+                    a = int(lsvt.split("-")[0])
+                    z = int(lsvt.split("-")[1])
+                    while a <= z:
+                        subverset[n].insert(i, a)
+                        a += 1
+                        i += 1
+            n += 1
         # activate
         self.book = entbook
         self.raw_verset = verset + subverset
