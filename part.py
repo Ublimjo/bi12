@@ -103,9 +103,8 @@ def getFileName(book):
 
 def wrap(string):
     text = textwrap.wrap(string, 40)
-    final = ""
-    for line in text:
-        final = final + line + "\n" + bcolor.OKGREEN + " | " + bcolor.ENDC
+    line = "\n" + bcolor.OKGREEN + " | " + bcolor.ENDC
+    final = line.join(text) + line
     return final
 
 
