@@ -22,9 +22,10 @@ def main():
             print(bi.book.capitalize())
             for i, chap in enumerate(bi.chapter):
                 part.parter(bi.book, chap, bi.verset2[i])
-        elif cmd[0] == (("exit") or ("quit")):
+        elif cmd[0] == "exit":
             break
-
+        elif cmd[0] == "quit":
+            break
         elif cmd[0] == "version":
             print("Version:", version)
 
