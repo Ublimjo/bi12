@@ -118,7 +118,7 @@ def parter(book, ver1, ver2):
 	"""
     filename = getFileName(book)
     # open file
-    filepath = "/data/data/com.termux/files/home/storage/shared/FloatingBible/bi12_MG/OEBPS/"
+    filepath = "/data/data/com.termux/files/usr/share/bi12/FloatingBible/bi12_MG/OEBPS/"
     try:
         if int(ver1) == 1:
             filexht = open(filepath + filename + ".xhtml", "r")
