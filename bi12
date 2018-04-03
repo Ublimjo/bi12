@@ -4,13 +4,13 @@ import sys
 import bible
 import part
 
-version = "0.5"
+__version__ = "0.6"
 
 
 def main():
     print("===========================================")
     print("  Baiboly fandikan-teny ny tontolo vaovao")
-    print("    Version :", version)
+    print("    Version :", __version__)
     print("===========================================")
     while True:
         command = input(" bi12 > ").lower()
