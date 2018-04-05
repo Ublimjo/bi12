@@ -96,8 +96,6 @@ def getFileName(book):
         if book == bookList[nbr][0]:
             return bookList[nbr][1]
 
-            break
-
         nbr += 1
 
 
@@ -124,7 +122,7 @@ def parter(book, ver1, ver2):
             filexht = open(filepath + filename + ".xhtml", "r")
         else:
             filexht = open(filepath + filename + "-split" + ver1 + ".xhtml", "r")
-    except:
+    except FileNotFoundError:
         hues.error("File not found")
         hues.error("Invalid chapter: " + ver1)
         return False
@@ -138,7 +136,7 @@ def parter(book, ver1, ver2):
         vrs = u"chapter" + ver1 + "_verse" + sver2
         try:
             stringPart = soup.find("span", attrs={"id": vrs}).next.next.next.next
-        except:
+        except AttributeError:
             hues.error("Invalid verset: " + sver2)
             break
 

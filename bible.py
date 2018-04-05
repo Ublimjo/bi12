@@ -69,15 +69,6 @@ bookList = [
     "apokalypsy",
 ]
 
-
-def parseInt(enter):
-    try:
-        return int(enter)
-
-    except:
-        return 0
-
-
 def getDist(enter):
     """
 		Function to test shortest distance of string
@@ -114,7 +105,7 @@ class bibleParse:
 				>>> bi = bible.bibleParse().parse("Mitio 24:14,16-20")
 				>>> bi.book
 				Matio
-				>>> bi.chapter 
+				>>> bi.chapter
 				24
 				>>> bi.verset2
 				[14,16,17,18,19,20]
