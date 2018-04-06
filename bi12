@@ -23,12 +23,12 @@ def main():
         command = input(" bi12 > ").lower()
         cmd = command.split(" ")
         # bi book
-        bi = bible.bibleParse()
-        bi.parse(command)
-        if bi.chapter != []:
-            print(bi.book.capitalize())
-            for i, chap in enumerate(bi.chapter):
-                part.parter(bi.book, chap, bi.verset2[i])
+        parser = bible.bibleParse()
+        parser.parse(command)
+        if parser.chapter != []:
+            print(parser.book.capitalize())
+            for i, chap in enumerate(parser.chapter):
+                part.parter(parser.book, chap, parser.verset2[i])
         elif cmd[0] == "exit":
             break
         elif cmd[0] == "quit":
@@ -42,10 +42,10 @@ def view(command):
         view function called for non-interactive mode
     """
     command = command.lower()
-    bi = bible.bibleParse()
-    bi.parse(command)
-    if bi.chapter != 0:
-        part.parter(bi.book, bi.chapter, bi.verset2)
+    parser = bible.bibleParse()
+    parser.parse(command)
+    if parser.chapter != 0:
+        part.parter(parser.book, parser.chapter, parser.verset2)
 
 
 if len(sys.argv) == 1:
