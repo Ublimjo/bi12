@@ -1,4 +1,3 @@
-import bible
 import hues
 import textwrap
 import os
@@ -74,11 +73,6 @@ bookList = [
 ]
 
 
-# test = bible.bibleParse()
-#test.parse("1 Jaona 5:19")
-#print("Book :", test.book)
-#print("Verset :", test.verset1)
-#print("Subverset :", test.verset2)
 class bcolor:
     HEADER = '\033[95m'
     OKBLUE = '\033[94m'
