@@ -1,4 +1,9 @@
 #!/data/data/com.termux/files/usr/bin/env python
+
+"""
+bi12 - entry point for called in /usr/bin/
+"""
+
 import argparse
 import sys
 import bible
@@ -8,6 +13,9 @@ __version__ = "0.6"
 
 
 def main():
+    """
+        main function called for enter in interactive mode
+    """
     print("===========================================")
     print("  Baiboly fandikan-teny ny tontolo vaovao")
     print("    Version :", __version__)
@@ -31,6 +39,9 @@ def main():
 
 
 def view(command):
+    """
+        view function called for non-interactive mode
+    """
     command = command.lower()
     bi = bible.bibleParse()
     bi.parse(command)
