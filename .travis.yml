@@ -1,3 +1,7 @@
 language: python
+python:
+    - "3.6"
 install:
     - pip install -r requirement.txt
+    - sh setup.sh
+    - bi12
