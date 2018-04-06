@@ -5,10 +5,11 @@ Date    : October 12, 2016
 This is a pure Python implementation of Dynamic Programming solution to the edit distance problem.
 
 The problem is :
-Given two strings A and B. Find the minimum number of operations to string B such that A = B. The permitted operations are removal,  insertion, and substitution.
-"""
+Given two strings A and B. Find the minimum number of operations to string B such that A = B.
+The permitted operations are removal,  insertion, and substitution.
 
-"""
+
+
 MIT License
 
 Copyright (c) 2016 The Algorithms
