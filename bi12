@@ -4,7 +4,6 @@
 bi12 - entry point for called in /usr/bin/
 """
 
-import argparse
 import sys
 import bible
 import part
