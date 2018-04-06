@@ -34,7 +34,7 @@ def main():
         elif cmd[0] == "quit":
             break
         elif cmd[0] == "version":
-            print("Version:", version)
+            print("Version:", __version__)
 
 
 def view(command):
