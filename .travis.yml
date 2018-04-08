@@ -4,4 +4,5 @@ python:
 install:
     - pip install -r requirement.txt
     - sh setup.sh
+script:
     - bi12
