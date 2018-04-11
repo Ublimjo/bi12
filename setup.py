@@ -19,7 +19,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'bi12 = bi12.bi12:main',
+            'bi12 = bi12.__main__:main',
         ]
     }
 )
