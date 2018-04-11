@@ -1,4 +1,4 @@
-import edit_distance as ed
+from bi12 import edit_distance as ed
 
 bookList = [
     "genesisy",

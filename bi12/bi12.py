@@ -5,8 +5,8 @@ bi12 - entry point for called in /usr/bin/
 """
 
 import sys
-import bible
-import part
+from bi12 import bible
+from bi12 import part
 
 __version__ = "0.6"
 
@@ -46,12 +46,3 @@ def view(command):
     parser.parse(command)
     if parser.chapter != 0:
         part.parter(parser.book, parser.chapter, parser.verset2)
-
-
-if len(sys.argv) == 1:
-    main()
-else:
-    if len(sys.argv) == 2:
-        view(sys.argv[1] + " " + sys.argv[2])
-    elif len(sys.argv) == 3:
-        view(sys.argv[1] + " " + sys.argv[2] + " " + sys.argv[3])
