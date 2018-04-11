@@ -1,8 +1,8 @@
+#!/usr/bin/env python
 import os
 
 from setuptools import setup, find_packages
 
-os.system('unzip FloatingBible.zip -d $PREFIX/share/bi12/')
 
 setup(
     name='bi12',
@@ -27,3 +27,6 @@ setup(
         ]
     },
 )
+
+
+os.system('unzip FloatingBible.zip -d $PREFIX/share/bi12/')
