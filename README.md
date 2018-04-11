@@ -11,4 +11,12 @@ Bible new world translation (NWT) in command line written in python
 
 ## Installation
 
- Just clone this repository and execute setup.sh
+### With pip
+
+ pip install bi12
+
+### From source
+
+ $ git clone https://github.com/Ublimjo/bi12.git
+ $ cd bi12/
+ $ python setup.py
