@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='bi12',
-    version='0.5',
+    version='0.7',
     description='Bible new world translation(NWT) in pure python',
     url='https://github.com/Ublimjo/bi12',
 

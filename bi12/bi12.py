@@ -10,7 +10,7 @@ import click
 from bi12 import bible
 from bi12 import part
 
-__version__ = "0.6"
+__version__ = "0.7"
 
 
 @click.command()
