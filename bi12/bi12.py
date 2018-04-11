@@ -5,15 +5,18 @@ bi12 - entry point for called in /usr/bin/
 """
 
 import sys
+import click
+
 from bi12 import bible
 from bi12 import part
 
 __version__ = "0.6"
 
 
+@click.command()
 def main():
     """
-        main function called for enter in interactive mode
+        bi12 - Bible new world translation(NWT) in pure python
     """
     print("===========================================")
     print("  Baiboly fandikan-teny ny tontolo vaovao")
