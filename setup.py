@@ -20,6 +20,7 @@ setup(
     install_requires=[
         'hues',
         'beautifulsoup4',
+        'click',
     ],
     entry_points={
         'console_scripts': [
