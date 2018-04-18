@@ -1,10 +1,3 @@
-#!/data/data/com.termux/files/usr/bin/env python
-
-"""
-bi12 - entry point for called in /usr/bin/
-"""
-
-import sys
 import click
 
 from bi12 import bible

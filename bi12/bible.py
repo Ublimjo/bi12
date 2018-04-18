@@ -69,12 +69,13 @@ bookList = [
     "apokalypsy",
 ]
 
+
 def getDist(enter):
     """
-		Function to test shortest distance of string
-		Mitio -> Matio
-		:param enter: string to test
-	"""
+        Function to test shortest distance of string
+        Mitio -> Matio
+        :param enter: string to test
+    """
     solver = ed.EditDistance()
     leaf = 0
     mean = []
@@ -99,17 +100,17 @@ class bibleParse:
 
     def parse(self, enter):
         """
-			parse verset input (Book with verset)
-			:param enter: verset to parse
-				>>> import bible
-				>>> bi = bible.bibleParse().parse("Mitio 24:14,16-20")
-				>>> bi.book
-				Matio
-				>>> bi.chapter
-				24
-				>>> bi.verset2
-				[14,16,17,18,19,20]
-			"""
+            parse verset input (Book with verset)
+            :param enter: verset to parse
+                >>> import bible
+                >>> bi = bible.bibleParse().parse("Mitio 24:14,16-20")
+                >>> bi.book
+                Matio
+                >>> bi.chapter
+                24
+                >>> bi.verset2
+                [14,16,17,18,19,20]
+        """
         cmd = enter.lower().split(" ")
         if len(cmd) == 1:
             return False

@@ -1,6 +1,5 @@
 import hues
 import textwrap
-import os
 from bs4 import BeautifulSoup
 
 bookList = [
@@ -102,12 +101,12 @@ def wrap(string):
 
 def parter(book, ver1, ver2):
     """
-		Function to print bible verset From file
-		Matio 24:14
-		:param book: 'Matio'
-		:param ver1: '24'
-		:param ver2: '14'
-	"""
+        Function to print bible verset From file
+        Matio 24:14
+        :param book: 'Matio'
+        :param ver1: '24'
+        :param ver2: '14'
+    """
     filename = getFileName(book)
     # open file
     filepath = "/data/data/com.termux/files/usr/share/bi12/FloatingBible/bi12_MG/OEBPS/"
@@ -115,7 +114,8 @@ def parter(book, ver1, ver2):
         if int(ver1) == 1:
             filexht = open(filepath + filename + ".xhtml", "r")
         else:
-            filexht = open(filepath + filename + "-split" + ver1 + ".xhtml", "r")
+            filexht = open(filepath + filename +
+                           "-split" + ver1 + ".xhtml", "r")
     except FileNotFoundError:
         hues.error("File not found")
         hues.error("Invalid chapter: " + ver1)
@@ -129,12 +129,14 @@ def parter(book, ver1, ver2):
         sver2 = str(sver2)
         vrs = u"chapter" + ver1 + "_verse" + sver2
         try:
-            stringPart = soup.find("span", attrs={"id": vrs}).next.next.next.next
+            stringPart = soup.find(
+                "span", attrs={"id": vrs}).next.next.next.next
         except AttributeError:
             hues.error("Invalid verset: " + sver2)
             break
 
         print(
-            bcolor.OKGREEN + " | " + bcolor.OKBLUE + "[" + sver2 + "]" + bcolor.ENDC,
+            bcolor.OKGREEN + " | " + bcolor.OKBLUE +
+            "[" + sver2 + "]" + bcolor.ENDC,
             wrap(stringPart),
         )
