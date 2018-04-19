@@ -134,7 +134,7 @@ def parter(book, ver1, ver2):
         except AttributeError:
             hues.error("Invalid verset: " + sver2)
             break
-
+        # last print to show verset
         print(
             bcolor.OKGREEN + " | " + bcolor.OKBLUE +
             "[" + sver2 + "]" + bcolor.ENDC,
