@@ -21,6 +21,7 @@ setup(
         'hues',
         'beautifulsoup4',
         'click',
+        'pre-commit',
     ],
     entry_points={
         'console_scripts': [
