@@ -1,9 +1,8 @@
+# -*- coding: utf-8 -*-
+import sys
 import click
 
-from bi12 import bible
-from bi12 import part
-
-__version__ = "0.7"
+from bi12 import __version__
 
 
 @click.command()
@@ -11,34 +10,14 @@ def main():
     """
         bi12 - Bible new world translation(NWT) in pure python
     """
-    print("===========================================")
+    greetings()
+    from bi12 import interactive
+    sys.exit(interactive.start())
+
+
+def greetings():
+    import os
+    print('=' * os.get_terminal_size()[0])
     print("  Baiboly fandikan-teny ny tontolo vaovao")
     print("    Version :", __version__)
-    print("===========================================")
-    while True:
-        command = input(" bi12 > ").lower()
-        cmd = command.split(" ")
-        # bi book
-        parser = bible.bibleParse()
-        parser.parse(command)
-        if parser.chapter != []:
-            print(parser.book.capitalize())
-            for i, chap in enumerate(parser.chapter):
-                part.parter(parser.book, chap, parser.verset2[i])
-        elif cmd[0] == "exit":
-            break
-        elif cmd[0] == "quit":
-            break
-        elif cmd[0] == "version":
-            print("Version:", __version__)
-
-
-def view(command):
-    """
-        view function called for non-interactive mode
-    """
-    command = command.lower()
-    parser = bible.bibleParse()
-    parser.parse(command)
-    if parser.chapter != 0:
-        part.parter(parser.book, parser.chapter, parser.verset2)
+    print('=' * os.get_terminal_size()[0])
