@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+from __future__ import unicode_literals
+from prompt_toolkit import prompt
+
 from bi12 import part
 from bi12 import bible
 from bi12 import __version__
@@ -25,7 +28,7 @@ def start():
 
 def _prompt(ent=' bi12 > '):
     try:
-        result = input(ent).lower()
+        result = prompt(ent).lower()
         return result
     except (KeyboardInterrupt, EOFError):
         return 'exit'
