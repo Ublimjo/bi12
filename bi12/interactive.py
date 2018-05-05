@@ -6,7 +6,7 @@ from bi12 import __version__
 
 def start():
     while True:
-        command = input(" bi12 > ").lower()
+        command = _prompt(' bi12 > ')
         cmd = command.split(" ")
         # bi book
         parser = bible.bibleParse()
@@ -21,3 +21,11 @@ def start():
             break
         elif cmd[0] == "version":
             print("Version:", __version__)
+
+
+def _prompt(ent=' bi12 > '):
+    try:
+        result = input(ent).lower()
+        return result
+    except (KeyboardInterrupt, EOFError):
+        return 'exit'
