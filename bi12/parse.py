@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from bi12 import edit_distance as ed
 
 bookList = [
@@ -102,7 +103,7 @@ class bibleParse:
         """
             parse verset input (Book with verset)
             :param enter: verset to parse
-                >>> import bible
+                >>> import parse
                 >>> bi = bible.bibleParse().parse("Mitio 24:14,16-20")
                 >>> bi.book
                 Matio

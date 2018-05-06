@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import hues
 import textwrap
 from bs4 import BeautifulSoup

@@ -3,8 +3,8 @@ from __future__ import unicode_literals
 from prompt_toolkit import prompt
 from prompt_toolkit.contrib.completers import WordCompleter
 
-from bi12 import part
-from bi12 import bible
+from bi12 import printer
+from bi12 import parse
 from bi12 import __version__
 
 
@@ -13,12 +13,12 @@ def start():
         command = _prompt(' bi12 > ')
         cmd = command.split(" ")
         # bi book
-        parser = bible.bibleParse()
+        parser = parse.bibleParse()
         parser.parse(command)
         if parser.chapter != []:
             print(parser.book.capitalize())
             for i, chap in enumerate(parser.chapter):
-                part.parter(parser.book, chap, parser.verset2[i])
+                printer.parter(parser.book, chap, parser.verset2[i])
         elif cmd[0] == "exit":
             break
         elif cmd[0] == "quit":
@@ -27,7 +27,7 @@ def start():
             print("Version:", __version__)
 
 
-book = WordCompleter(bible.bookList)
+book = WordCompleter(parse.bookList)
 
 
 def _prompt(ent=' bi12 > '):
