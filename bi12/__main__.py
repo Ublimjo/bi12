@@ -17,7 +17,11 @@ def main():
 
 def greetings():
     import os
-    print('=' * os.get_terminal_size()[0])
-    print("  Baiboly fandikan-teny ny tontolo vaovao")
-    print("    Version :", __version__)
-    print('=' * os.get_terminal_size()[0])
+    width = os.get_terminal_size()[0]
+    sVersion = 'Version: ' + __version__
+    print('=' * width)
+    print()
+    print("Baiboly fandikan-teny ny tontolo vaovao".center(width))
+    print(sVersion.center(width))
+    print()
+    print('=' * width)
