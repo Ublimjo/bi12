@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from prompt_toolkit import prompt
+from prompt_toolkit.contrib.completers import WordCompleter
 
 from bi12 import part
 from bi12 import bible
@@ -26,9 +27,13 @@ def start():
             print("Version:", __version__)
 
 
+book = WordCompleter(bible.bookList)
+
+
 def _prompt(ent=' bi12 > '):
     try:
-        result = prompt(ent).lower()
+        result = prompt(ent,
+                        completer=book).lower()
         return result
     except (KeyboardInterrupt, EOFError):
         return 'exit'
