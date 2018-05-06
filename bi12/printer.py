@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+from bi12 import color
+
 import hues
 import textwrap
 from bs4 import BeautifulSoup
@@ -73,17 +75,6 @@ bookList = [
 ]
 
 
-class bcolor:
-    HEADER = '\033[95m'
-    OKBLUE = '\033[94m'
-    OKGREEN = '\033[92m'
-    WARNING = '\033[93m'
-    FAIL = '\033[91m'
-    ENDC = '\033[0m'
-    BOLD = '\033[1m'
-    UNDERLINE = '\033[4m'
-
-
 def getFileName(book):
     nbr = 0
     while nbr < 66:
@@ -95,7 +86,7 @@ def getFileName(book):
 
 def wrap(string):
     text = textwrap.wrap(string, 40)
-    line = "\n" + bcolor.OKGREEN + " | " + bcolor.ENDC
+    line = "\n" + color.green(" | ")
     final = line.join(text) + line
     return final
 
@@ -124,7 +115,7 @@ def parter(book, ver1, ver2):
 
     # parse file
     soup = BeautifulSoup(filexht, "html.parser")
-    print(bcolor.OKGREEN + "[" + ver1 + "]" + bcolor.ENDC, ver2)
+    print(color.green("[" + ver1 + "]"), ver2)
     # for multiples verset
     for sver2 in ver2:
         sver2 = str(sver2)
@@ -137,7 +128,6 @@ def parter(book, ver1, ver2):
             break
         # last print to show verset
         print(
-            bcolor.OKGREEN + " | " + bcolor.OKBLUE +
-            "[" + sver2 + "]" + bcolor.ENDC,
+            color.green(" | ") + color.blue("[" + sver2 + "]"),
             wrap(stringPart),
         )

@@ -15,6 +15,7 @@ def start():
         # bi book
         parser = parse.bibleParse()
         parser.parse(command)
+        # command
         if parser.chapter != []:
             print(parser.book.capitalize())
             for i, chap in enumerate(parser.chapter):

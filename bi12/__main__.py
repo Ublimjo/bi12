@@ -19,6 +19,7 @@ def greetings():
     import os
     width = os.get_terminal_size()[0]
     sVersion = 'Version: ' + __version__
+
     print('=' * width)
     print()
     print("Baiboly fandikan-teny ny tontolo vaovao".center(width))
